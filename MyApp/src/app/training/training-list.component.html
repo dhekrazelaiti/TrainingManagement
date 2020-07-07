@@ -1,0 +1,43 @@
+<div class="card">
+  <div class="card-header">
+    {{pageTitle}}
+  </div>
+  <div class="card-body">
+    <div class ="row">
+      <div class ="col-md-2">Filter by :</div>
+      <div class = "col-md-4">
+        <input type="text" [(ngModel)] = 'listFilter'/>
+      </div>
+    </div>
+    <div class ="row">
+     <div class="col-md-6">
+      <h4>Filter by: {{ listFilter }}</h4>
+     </div>
+    </div>
+  <div class="table-responsive">
+    <table class="table"
+           *ngIf = 'trainings && trainings.length'>
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Author</th>
+          <th>Tags</th>
+          <th>Source</th>
+          <th>Released</th>
+          <th>Rating</th>
+        </tr>
+      </thead>
+    <tbody>
+      <tr *ngFor ='let training of trainings'>
+        <td> {{training.title}} </td>
+        <td>{{training.author | uppercaseFirstWords}} </td>
+        <td>{{training.tags}} </td>
+        <td>{{training.source}} </td>
+        <td>{{training.released | date}} </td>
+      </tr>
+    </tbody>
+    </table>
+
+  </div>
+  </div>
+</div>
