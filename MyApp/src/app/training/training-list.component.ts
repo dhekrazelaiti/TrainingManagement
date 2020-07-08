@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ITraining } from './training';
 
 @Component({
@@ -7,11 +7,21 @@ import { ITraining } from './training';
   styleUrls: ['./training-list.component.css'],
 })
 
-export class TrainingListComponent{
+export class TrainingListComponent implements OnInit{
 
   pageTitle: string = "Training List";
 
-  listFilter: string = "carts";
+  _listFilter: string;
+
+  get listFilter(): string{
+    return this._listFilter;
+  }
+  set listFilter(value: string){
+     this._listFilter = value;
+     this.filteredTrainings = this.listFilter ? this.performFilter(this.listFilter) : this.trainings;
+  }
+
+  filteredTrainings: ITraining[];
 
   trainings: ITraining[] = [
     {
@@ -147,7 +157,20 @@ export class TrainingListComponent{
       "released": "05/01/2019"
     }
   ];
+constructor() {
+  this.filteredTrainings = this.trainings;
+  this.listFilter = '';
+}
 
+  performFilter(filterBy: string): ITraining[] {
+
+    filterBy = filterBy.toLocaleLowerCase();
+
+    return this.trainings.filter((training: ITraining)  =>
+
+    training.title.toLocaleLowerCase().indexOf(filterBy) !== -1);
+
+  }
   ngOnInit(): void {
 
     console.log('...Start Application!!!');

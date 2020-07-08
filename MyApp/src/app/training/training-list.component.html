@@ -6,7 +6,7 @@
     <div class ="row">
       <div class ="col-md-2">Filter by :</div>
       <div class = "col-md-4">
-        <input type="text" [(ngModel)] = 'listFilter'/>
+        <input type="text" [(ngModel)]= "listFilter"  placeholder="search text goes here"/>
       </div>
     </div>
     <div class ="row">
@@ -28,7 +28,7 @@
         </tr>
       </thead>
     <tbody>
-      <tr *ngFor ='let training of trainings'>
+      <tr *ngFor ='let training of filteredTrainings'>
         <td> {{training.title}} </td>
         <td>{{training.author | uppercaseFirstWords}} </td>
         <td>{{training.tags}} </td>

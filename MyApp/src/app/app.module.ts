@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { TrainingListComponent} from './training/training-list.component';
 import { UppercaseFirstWord } from './shared/uppercase-first-word.pipe';
 
+
 @NgModule({
   declarations: [
     AppComponent,
