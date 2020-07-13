@@ -9,7 +9,8 @@
     "tags": "web",
     "favorite": 0,
     "completed": 0,
-    "released": "02/01/2020"
+    "released": "02/01/2020",
+    "starRating": "4"
   },
   {
     "id": 2,
@@ -21,7 +22,8 @@
     "tags": "rxjs",
     "favorite": 0,
     "completed": 0,
-    "released": "08/01/2017"
+    "released": "08/01/2017",
+    "starRating": "2.5"
   },
   {
     "id": 3,
@@ -33,7 +35,8 @@
     "tags": "node.js",
     "favorite": 0,
     "completed": 0,
-    "released": "02/01/2017"
+    "released": "02/01/2017",
+    "starRating": "5"
   },
   {
     "id": 4,
@@ -45,7 +48,8 @@
     "tags": "Angular",
     "favorite": 0,
     "completed": 0,
-    "released": "01/01/1970"
+    "released": "01/01/1970",
+    "starRating": "2"
   },
   {
     "id": 5,
@@ -57,7 +61,8 @@
     "tags": "ASP.Net, GraphQL",
     "favorite": 0,
     "completed": 0,
-    "released": "01/01/2019"
+    "released": "01/01/2019",
+    "starRating": "3.5"
   },
   {
     "id": 6,
@@ -69,7 +74,8 @@
     "tags": "JavaScript",
     "favorite": 0,
     "completed": 0,
-    "released": "01/01/2020"
+    "released": "01/01/2020",
+    "starRating": "4"
   },
   {
     "id": 7,
@@ -81,7 +87,8 @@
     "tags": "Angular, testing",
     "favorite": 0,
     "completed": 0,
-    "released": "03/01/2020"
+    "released": "03/01/2020",
+    "starRating": "2.5"
   },
   {
     "id": 8,
@@ -93,7 +100,8 @@
     "tags": "RabbitMQ",
     "favorite": 0,
     "completed": 0,
-    "released": "02/01/2020"
+    "released": "02/01/2020",
+    "starRating": "5"
   },
   {
     "id": 9,
@@ -105,7 +113,8 @@
     "tags": "Front-End",
     "favorite": 0,
     "completed": 0,
-    "released": "11/01/2019"
+    "released": "11/01/2019",
+    "starRating": "4.5"
   },
   {
     "id": 10,
@@ -117,7 +126,8 @@
     "tags": "Angular, Protractor, Cucumber",
     "favorite": 0,
     "completed": 0,
-    "released": "03/01/2019"
+    "released": "03/01/2019",
+    "starRating": "1.5"
   },
   {
     "id": 11,
@@ -129,7 +139,8 @@
     "tags": "Front-End, Angular, React",
     "favorite": 0,
     "completed": 0,
-    "released": "05/01/2019"
+    "released": "05/01/2019",
+    "starRating": "2.5"
   },
   {
     "id": 12,

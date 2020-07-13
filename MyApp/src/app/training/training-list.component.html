@@ -34,6 +34,9 @@
         <td>{{training.tags}} </td>
         <td>{{training.source}} </td>
         <td>{{training.released | date}} </td>
+        <td><app-star [rating]='training.starRating'
+                      (ratingClicked)='onRatingClicked($event)'>
+        </app-star></td>
       </tr>
     </tbody>
     </table>

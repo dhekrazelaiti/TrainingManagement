@@ -4,18 +4,23 @@ import { Observable, throwError } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
 
 
+import { ITraining } from '../training/training';
+
+
 @Injectable({
-  providedIn :'root'
+  providedIn : 'root'
 })
 
-export class TainingService {
-  private trainingUrl = 'api/training.json';
+export class TrainingService {
+
+  private trainingUrl = 'api/trainings/training.json';
 
   constructor( private http: HttpClient) {}
 
  getTrainings(): Observable<ITraining[]> {
 
-   return this.http.get<ITraining>(this.trainingUrl).pipe(
+   return this.http.get<ITraining[]>(this.trainingUrl)
+   .pipe(
      tap(data => console.log('All: ' + JSON.stringify(data))),
      catchError(this.handleError)
    );
@@ -25,7 +30,7 @@ export class TainingService {
  // tslint:disable-next-line:typedef
  private handleError(err: HttpErrorResponse){
    let errorMessage = '';
-   if(err.error instanceof ErrorEvent){
+   if (err.error instanceof ErrorEvent){
      errorMessage = `An error occurred: ${err.error.message}`;
    }else{
      errorMessage = `Server returned code: ${err.status}, error message is: ${err.message}`;

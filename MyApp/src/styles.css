@@ -6,6 +6,9 @@ div.card-header {
 font-size: large;
 }
 
+body {
+  margin: 21px;
+}
 div.card {
 margin-top: 10px;
 }

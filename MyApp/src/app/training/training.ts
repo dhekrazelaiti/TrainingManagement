@@ -9,6 +9,7 @@ export interface ITraining {
  favorite: number;
  completed: number;
  released: string;
+ starRating: string;
 
 }
 
