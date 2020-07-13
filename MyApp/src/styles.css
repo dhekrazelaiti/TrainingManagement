@@ -15,4 +15,11 @@ margin-top: 10px;
 
 .table {
   margin-top: 10px;
+
 }
+.container{
+
+  max-width: 100% !important;
+
+}
+
