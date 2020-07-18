@@ -14,6 +14,7 @@ import { ITraining } from '../training/training';
 export class TrainingService {
 
   private trainingUrl = 'api/trainings/training.json';
+  training: ITraining;
 
   constructor( private http: HttpClient) {}
 
@@ -26,6 +27,12 @@ export class TrainingService {
    );
 
  }
+
+getTrainingById(id: number): Observable<ITraining[]> {
+
+  return this.training.find(training => training.id == id);
+}
+
 
  // tslint:disable-next-line:typedef
  private handleError(err: HttpErrorResponse){

@@ -29,7 +29,9 @@
       </thead>
     <tbody>
       <tr *ngFor ='let training of filteredTrainings'>
-        <td> {{training.title}} </td>
+        <td><a [routerLink]="['/trainings', training.id]">
+          {{training.title}} </a>
+        </td>
         <td>{{training.author | uppercaseFirstWords}} </td>
         <td>{{training.tags}} </td>
         <td>{{training.source}} </td>
