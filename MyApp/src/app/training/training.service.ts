@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
-import { catchError, tap } from 'rxjs/operators';
+import { catchError, tap , map , find, retry} from 'rxjs/operators';
+
 
 
 import { ITraining } from '../training/training';
@@ -13,27 +14,32 @@ import { ITraining } from '../training/training';
 
 export class TrainingService {
 
-  private trainingUrl = 'api/trainings/training.json';
+  private trainingUrl = 'http://localhost:3000';
   training: ITraining;
 
   constructor( private http: HttpClient) {}
 
  getTrainings(): Observable<ITraining[]> {
 
-   return this.http.get<ITraining[]>(this.trainingUrl)
-   .pipe(
-     tap(data => console.log('All: ' + JSON.stringify(data))),
-     catchError(this.handleError)
+   return this.http.get<ITraining[]>(this.trainingUrl + '/trainings')
+    .pipe(
+      tap(data => console.log('All: ' + JSON.stringify(data))),
+      catchError(this.handleError)
+    //
+    //  catchError(this.handleError)
    );
 
  }
 
-getTrainingById(id: number): Observable<ITraining[]> {
+getTrainingById(id): Observable<ITraining> {
 
-  return this.training.find(training => training.id == id);
+  return this.http.get<ITraining>(this.trainingUrl  + '/trainings/' + id)
+  .pipe(
+    retry(1),
+    catchError(this.handleError)
+  )
+
 }
-
-
  // tslint:disable-next-line:typedef
  private handleError(err: HttpErrorResponse){
    let errorMessage = '';

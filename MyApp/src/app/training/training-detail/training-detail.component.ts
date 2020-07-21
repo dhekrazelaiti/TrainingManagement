@@ -22,14 +22,14 @@ export class TrainingDetailComponent implements OnInit {
   constructor( private route: ActivatedRoute, private trainingService: TrainingService) { }
 
   ngOnInit(): void {
-    let id :number = parseInt(this.route.snapshot.params['id']);
-    this.trainingService.getTrainingById(id);
 
-    console.log("===>this.training /03", this.training );
-    this.pageTitle+= `: ${id}`;
+  let id = this.route.snapshot.params['id'];
+    this.trainingService.getTrainingById(id).subscribe((data: {}) => {
+      this.training = data;
 
+      console.log("===> data", data);
 
-
+      //this.pageTitle = this.pageTitle;
+  });
   }
-
 }
