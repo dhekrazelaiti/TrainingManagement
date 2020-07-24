@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 import { ITraining } from '../training';
 import { TrainingService } from '../training.service';
@@ -19,17 +19,24 @@ export class TrainingDetailComponent implements OnInit {
 
 
 
-  constructor( private route: ActivatedRoute, private trainingService: TrainingService) { }
+  constructor( private route: ActivatedRoute,
+    private trainingService: TrainingService,
+    private router: Router ) { }
 
   ngOnInit(): void {
 
   let id = this.route.snapshot.params['id'];
-    this.trainingService.getTrainingById(id).subscribe((data: {}) => {
-      this.training = data;
+    this.trainingService.getTrainingById(id).subscribe((data: ITraining) => {
+    this.training = data;
 
-      console.log("===> data", data);
-
-      //this.pageTitle = this.pageTitle;
   });
+  }
+
+  onBack(): void{
+
+    console.log("===> onBack method");
+
+    this.router.navigate(['/trainings']);
+
   }
 }
