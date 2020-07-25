@@ -25,6 +25,7 @@
           <th>Source</th>
           <th>Released</th>
           <th>Rating</th>
+          <th>Edit</th>
         </tr>
       </thead>
     <tbody>
@@ -39,6 +40,12 @@
         <td><app-star [rating]='training.starRating'
                       (ratingClicked)='onRatingClicked($event)'>
         </app-star></td>
+        <td>
+          <button class="btn" [routerLink]="['/trainings-edit', training.id]">
+            <i class="glyphicon glyphicon-pencil" ></i>
+          edit</button>
+        </td>
+
       </tr>
     </tbody>
     </table>

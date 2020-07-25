@@ -19,6 +19,14 @@ export class TrainingService {
 
   constructor( private http: HttpClient) {}
 
+  // Http Options
+  httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json'
+    })
+  }
+
+ // HttpClient API get() method => get trainings list
  getTrainings(): Observable<ITraining[]> {
 
    return this.http.get<ITraining[]>(this.trainingUrl + '/trainings')
@@ -30,7 +38,7 @@ export class TrainingService {
    );
 
  }
-
+ // HttpClient API get() method => get training
 getTrainingById(id): Observable<ITraining> {
 
   return this.http.get<ITraining>(this.trainingUrl  + '/trainings/' + id)
@@ -40,6 +48,17 @@ getTrainingById(id): Observable<ITraining> {
   )
 
 }
+// HttpClient API put() method => Update training
+updateTraining(id, training): Observable<ITraining> {
+  return this.http.put<ITraining>(this.trainingUrl + '/trainings/' + id,
+   JSON.stringify(training),
+   this.httpOptions)
+  .pipe(
+    retry(1),
+    catchError(this.handleError)
+  )
+}
+
  // tslint:disable-next-line:typedef
  private handleError(err: HttpErrorResponse){
    let errorMessage = '';
