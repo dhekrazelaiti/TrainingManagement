@@ -28,10 +28,10 @@ export class TrainingEditComponent implements OnInit {
 
   // Update training data
   updateTraining() {
-    if(window.confirm('Are you sure, you want to update?')){
+    if ( window.confirm('Are you sure, you want to update?')){
       this.trainingService.updateTraining(this.id, this.trainingData).subscribe(data => {
-        this.router.navigate(['/trainings'])
-      })
+        this.router.navigate(['/trainings']);
+      });
     }
   }
 

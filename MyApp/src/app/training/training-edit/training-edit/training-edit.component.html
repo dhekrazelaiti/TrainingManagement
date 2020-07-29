@@ -1,1 +1,46 @@
-<p>training-edit works!</p>
+<div class="container custom-container">
+  <div class="col-md-12">
+
+    <h3 class="mb-3 text-center">Update Training</h3>
+
+    <div class="form-group">
+      <input type="text" [(ngModel)]="trainingData.title" class="form-control" placeholder="Title">
+    </div>
+
+    <div class="form-group">
+      <input type="text" [(ngModel)]="trainingData.source" class="form-control" placeholder="Email">
+    </div>
+
+    <div class="form-group">
+      <input type="text" [(ngModel)]="trainingData.author" class="form-control" placeholder="Author">
+    </div>
+
+    <div class="form-group">
+      <input type="text" [(ngModel)]="trainingData.url" class="form-control" placeholder="Url">
+    </div>
+
+    <div class="form-group">
+      <input type="text" [(ngModel)]="trainingData.length" class="form-control" placeholder="Length">
+    </div>
+    <div class="form-group">
+      <input type="text" [(ngModel)]="trainingData.tags" class="form-control" placeholder="Tags">
+    </div>
+    <div class="form-group">
+      <input type="text" [(ngModel)]="trainingData.favorite" class="form-control" placeholder="Favorite">
+    </div>
+    <div class="form-group">
+      <input type="text" [(ngModel)]="trainingData.completed" class="form-control" placeholder="Completed">
+    </div>
+    <div class="form-group">
+      <input type="text" [(ngModel)]="trainingData.released" class="form-control" placeholder="Released">
+    </div>
+    <div class="form-group">
+      <input type="text" [(ngModel)]="trainingData.starRating" class="form-control" placeholder="Star Rating">
+    </div>
+
+    <div class="form-group">
+      <button class="btn btn-success btn-lg btn-block" (click)="updateTraining()">Update Employee</button>
+    </div>
+  </div>
+</div>
+

@@ -41,9 +41,7 @@
                       (ratingClicked)='onRatingClicked($event)'>
         </app-star></td>
         <td>
-          <button class="btn" [routerLink]="['/trainings-edit', training.id]">
-            <i class="glyphicon glyphicon-pencil" ></i>
-          edit</button>
+          <button [routerLink]="['/trainings-edit', training.id]" type="button" class="btn btn-outline-info waves-effect px-3"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
         </td>
 
       </tr>
