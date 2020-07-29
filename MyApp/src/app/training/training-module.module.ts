@@ -7,7 +7,8 @@ import { UppercaseFirstWord } from '../shared/uppercase-first-word.pipe';
 import { StarComponent } from '../starComponent/star.component';
 import { TrainingDetailComponent } from './training-detail/training-detail.component';
 import { TrainingGuardGuard } from './training-guard.guard';
-import { TrainingEditComponent } from './training-edit/training-edit/training-edit.component';
+import { TrainingEditComponent } from './training-edit/training-edit.component';
+
 
 
 
