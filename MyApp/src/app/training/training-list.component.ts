@@ -25,6 +25,7 @@ export class TrainingListComponent implements OnInit{
 
   filteredTrainings: ITraining[];
   trainings: ITraining[] = [];
+  trainingData: any = {}
 
   constructor( private trainingService: TrainingService) {
   // this.filteredTrainings = this.trainings;
@@ -43,6 +44,7 @@ onRatingClicked(message: string): void {
 
   }
   ngOnInit(): void {
+
     this.trainingService.getTrainings().subscribe({
       next: trainings => {
         this.trainings = trainings;
@@ -51,6 +53,31 @@ onRatingClicked(message: string): void {
       error: err => this.errorMessage = err
     });
     console.log('...Start Application!!!');
+
   }
+  // Get trainings list
+loadTrainings() {
+  return this.trainingService.getTrainings().subscribe((data : {}) => {
+    this.trainingData = data;
+  })
+}
+// Delete training method
+
+deleteTraining(training: ITraining): void {
+  this.trainingService.deleteTraining(training.id)
+    .subscribe( data => {
+      this.trainings = this.trainings.filter(t => t !== training);
+      console.log("==>this.trainings:", this.trainings);
+    })
+};
+
+// deleteTraining(id) {
+//   if (window.confirm('Are you sure, you want to delete?')){
+//     this.trainingService.deleteTraining(id).subscribe(data => {
+//       this.loadTrainings()
+//     })
+//   }
+// }
+
 
 }

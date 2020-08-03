@@ -8,6 +8,7 @@ import { StarComponent } from '../starComponent/star.component';
 import { TrainingDetailComponent } from './training-detail/training-detail.component';
 import { TrainingGuardGuard } from './training-guard.guard';
 import { TrainingEditComponent } from './training-edit/training-edit.component';
+import { TrainingDeleteComponent } from './training-delete/training-delete.component';
 
 
 
@@ -20,6 +21,7 @@ import { TrainingEditComponent } from './training-edit/training-edit.component';
     StarComponent,
     TrainingDetailComponent,
     TrainingEditComponent,
+    TrainingDeleteComponent,
   ],
   imports: [
     CommonModule,

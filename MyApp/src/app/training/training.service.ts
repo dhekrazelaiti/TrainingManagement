@@ -59,6 +59,15 @@ updateTraining(id, training): Observable<ITraining> {
   )
 }
 
+// HttpClient API delete() method => Delete training
+deleteTraining(id){
+  return this.http.delete<ITraining>(this.trainingUrl + '/trainings/' + id, this.httpOptions)
+  .pipe(
+    retry(1),
+    catchError(this.handleError)
+  )
+}
+
  // tslint:disable-next-line:typedef
  private handleError(err: HttpErrorResponse){
    let errorMessage = '';

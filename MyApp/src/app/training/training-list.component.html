@@ -26,6 +26,7 @@
           <th>Released</th>
           <th>Rating</th>
           <th>Edit</th>
+          <th>Delete</th>
         </tr>
       </thead>
     <tbody>
@@ -42,6 +43,9 @@
         </app-star></td>
         <td>
           <button [routerLink]="['/trainings-edit', training.id]" type="button" class="btn btn-outline-info waves-effect px-3"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
+        </td>
+        <td>
+          <button  (click)="deleteTraining(training)" type="button" class="btn btn-outline-info waves-effect px-3"><i class="fa fa-trash" aria-hidden="true"></i></button>
         </td>
 
       </tr>

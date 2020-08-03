@@ -32,6 +32,7 @@ export class TrainingDetailComponent implements OnInit {
   });
   }
 
+
   onBack(): void{
 
     console.log("===> onBack method");
